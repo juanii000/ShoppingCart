@@ -60,7 +60,7 @@ public class ShoppingCartControllerTest {
 
         ResponseEntity<String> response = shoppingCartController.addToCart(1, 2, 1L);
 
-        verify(itemService, times(10)).save(item);
+        verify(itemService, times(1)).save(item);
         verify(cartService, times(1)).updateCart(cart);
         assertEquals("Product added to the cart.", response.getBody());
     }
